@@ -9,13 +9,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var userDataModel: UserDataModel
     var body: some View {
-        Text("Hello, World!")
+        ZStack {
+            if self.userDataModel.user != nil {
+                MainView()
+            } else {
+                LandingPage()
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(UserDataModel())
     }
 }
