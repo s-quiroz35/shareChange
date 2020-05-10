@@ -10,21 +10,25 @@
   <form action="/" method="GET">
     <div>
       <label for="card_number">CardNumber</label>
-      <input id="card_number" name = "card_number" type="text" required>
+      <input id="card_number" name = "card_number" type="text">
     </div>
     <div>
       <label for="exp_month">ExpMonth</label>
-      <input id="exp_month" name = "exp_month" type="text" required>
+      <input id="exp_month" name = "exp_month" type="text" >
     </div>
     <div>
       <label for="exp_year">ExpYear</label>
-      <input id="exp_year" name = "exp_year" type="text" required>
+      <input id="exp_year" name = "exp_year" type="text" >
     </div>
     <div>
       <label for="csv">CSV</label>
-      <input id="csv" name = "csv" type="text" required>
+      <input id="csv" name = "csv" type="text" >
     </div>
-    <button id="the_button" type="submit">Submit</button>
+    <input id="the_button" type="button" value="clickme" />
+    <div>
+      <button id="ten">Ten</button>
+      <button id="twenty">Twenty</button>
+    </div>
   </form>
   <button id="link-button">Link Account</button>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
@@ -57,6 +61,9 @@
         // The metadata object contains info about the institution the
         // user selected and the account ID or IDs, if the
         // Select Account view is enabled.
+        //###############################################
+        // CHANGE WHATEVER THE IOS EQUIVALENT IS TO THIS:
+        //###############################################
         $.post('/plaid_token_exchange', {
           publicToken: public_token,
         });
